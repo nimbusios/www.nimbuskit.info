@@ -6,4 +6,4 @@ require('http').createServer(function (request, response) {
   request.addListener('end', function () {
     file.serve(request, response);
   });
-}).listen(1337);
+}).listen(8024);
