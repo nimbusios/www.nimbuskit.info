@@ -136,7 +136,7 @@ $(document).ready(function(){
           .append(e.actor.login+' '+page.action+' ')
           .append($('<a>')
             .attr('href', page.html_url)
-            .html('a wiki page')))
+            .html('a wiki page'))
         );
         row.append(when);
 
