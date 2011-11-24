@@ -53,7 +53,6 @@ $(document).ready(function(){
       .append($('<dd>').html('Watchers: '+json.watchers))
       .append($('<dd>').html('Open Issues: '+json.open_issues))
     );
-    console.log(json);
   });
 
   GitHubAPI.RepoEvents('jverkoey', 'nimbus', function(json, status) {
