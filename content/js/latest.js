@@ -135,7 +135,7 @@ $(document).ready(function(){
           .append(avatar)
           .append(e.actor.login+' '+page.action+' ')
           .append($('<a>')
-            .attr('href', page.html_url)
+            .attr('href', page.html_url.replace('https://github.com/jverkoey/nimbus/wiki/', 'http://wiki.nimbuskit.info/'))
             .html('a wiki page'))
         );
         row.append(when);
