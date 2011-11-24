@@ -1,0 +1,25 @@
+
+.well {
+  padding: 10px;
+}
+
+#latest .avatar {
+  margin: 3px;
+}
+
+#latest dt {
+}
+
+#latest dd {
+  margin-left: 22px;
+}
+
+#latest .spacer {
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #FFF;
+  margin: 5px 0;
+}
+
+.popover .inner {
+  width: 500px;
+}
