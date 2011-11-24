@@ -8,15 +8,15 @@
 var GitHubAPI = {};
 
 GitHubAPI.Repo = function(username, reponame, callback) {
-  requestURL = "https://api.github.com/repos/"+username+"/"+reponame;
+  requestURL = "https://api.github.com/repos/"+username+"/"+reponame+'?callback=?';
   $.getJSON(requestURL, function(json, status){
-    callback(json, status);
+    callback(json.data, status);
   });
 };
 GitHubAPI.RepoEvents = function(username, reponame, callback) {
-  requestURL = "https://api.github.com/repos/"+username+"/"+reponame+"/events";
+  requestURL = "https://api.github.com/repos/"+username+"/"+reponame+"/events?callback=?";
   $.getJSON(requestURL, function(json, status){
-    callback(json, status);
+    callback(json.data, status);
   });
 };
 function normalizeDate(date) {
