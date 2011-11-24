@@ -129,6 +129,19 @@ $(document).ready(function(){
         );
         row.append(when);
 
+      } else if (e.type == 'GollumEvent') {
+        var page = e.payload.pages[0];
+        row.append($('<dt>')
+          .append(avatar)
+          .append(e.actor.login+' '+page.action+' ')
+          .append($('<a>')
+            .attr('href', page.html_url)
+            .html('a wiki page')))
+        );
+        row.append(when);
+
+        row.attr('title', e.actor.login+' '+page.action+' '+page.title);
+
       } else if (e.type == 'ForkEvent') {
         row.append($('<dt>')
           .append(avatar)
