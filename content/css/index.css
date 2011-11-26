@@ -23,3 +23,33 @@
 .popover .inner {
   width: 500px;
 }
+
+.contributor_profile {
+  padding: 5px;
+  margin: 0 5px;
+  margin-bottom: 20px;
+  border: 1px solid #DDD;
+  background-color: #FFF;
+  float: left;
+}
+
+.contributor_profile .retired {
+  opacity: 0.5;
+}
+
+.contributor_profile .name {
+  margin-top: 0.2em;
+  text-align: center;
+  width: 110px;
+}
+
+.contributor_profile .role {
+  text-align: center;
+  color: #888;
+  margin-bottom: 0.3em;
+}
+
+.contributor_profile .twitter,
+.contributor_profile .github {
+  text-align: center;
+}
