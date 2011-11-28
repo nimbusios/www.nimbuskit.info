@@ -1,6 +1,11 @@
-
 .well {
   padding: 10px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  border: none;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
 }
 
 #latest .avatar {
