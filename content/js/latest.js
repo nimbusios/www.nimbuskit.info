@@ -89,7 +89,7 @@ $(document).ready(function(){
 
       var didCreate = true;
       var row = $('<div>');
-      row.attr('data-placement', 'right');
+      row.attr('data-placement', 'left');
 
       if (e.type == 'PushEvent') {
         row.append($('<dt>')

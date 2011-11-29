@@ -8,6 +8,20 @@
   -moz-border-radius: 6px;
 }
 
+.container {
+  width: 1160px;
+}
+
+.container > .content {
+  width: 920px;
+  float: left;
+}
+
+.container > .sidebar {
+  float: right;
+  width: 220px;
+}
+
 #latest .avatar {
   margin: 3px;
 }
