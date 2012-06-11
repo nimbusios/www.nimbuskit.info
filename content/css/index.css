@@ -50,6 +50,8 @@
   border: 1px solid #DDD;
   background-color: #FFF;
   float: left;
+  width: 137px;
+  height: 190px;
 }
 
 .contributor_profile .retired {
