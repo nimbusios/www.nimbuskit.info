@@ -8,8 +8,17 @@
   -moz-border-radius: 6px;
 }
 
+.hero-unit {
+  padding: 20px;
+}
+
 .container {
   width: 1160px;
+}
+
+.container .nimbuslogo {
+  float: left;
+  margin-right: 10px;
 }
 
 .container > .content {
