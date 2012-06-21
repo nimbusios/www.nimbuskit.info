@@ -61,6 +61,20 @@ $(document).ready(function(){
     );
   });
 
+  GitHubAPI.RepoContributors('jverkoey', 'nimbus', function(json, status) {
+    var c = $('#contributors');
+    c.empty();
+
+    for (var i in json) {
+      c.append($('<div>').addClass('contributor_profile')
+        .append($('<img>').attr('src', 'http://www.gravatar.com/avatar/'+i.gravatar_id+'?s=135&amp;d=http://three20.info/gfx/team/silhouette.gif'))
+        .append($('<div>').addClass('name').html(i.login))
+        .append($('<div>').addClass('github')
+                .append($('<a>').attr('href', 'http://github.com/'+i.login).html(i.login))))
+      );
+    }
+  });
+
   GitHubAPI.RepoEvents('jverkoey', 'nimbus', function(json, status) {
     var l = $('#latest');
     l.empty();
