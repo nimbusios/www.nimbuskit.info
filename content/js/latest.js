@@ -66,6 +66,7 @@ $(document).ready(function(){
     c.empty();
 
     for (var i in json) {
+      console.log(i);
       c.append(
         $('<div>').addClass('contributor_profile')
         .append(
