@@ -19,6 +19,12 @@ GitHubAPI.RepoEvents = function(username, reponame, callback) {
     callback(json.data, status);
   });
 };
+GitHubAPI.RepoContributors = function(username, reponame, callback) {
+  requestURL = "https://api.github.com/repos/"+username+"/"+reponame+'/contributors?callback=?';
+  $.getJSON(requestURL, function(json, status){
+    callback(json.data, status);
+  });
+};
 function normalizeDate(date) {
   var relative_to = new Date();
   var delta = parseInt((relative_to.getTime() - date.getTime()) / 1000);
