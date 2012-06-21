@@ -71,7 +71,6 @@ $(document).ready(function(){
         $('<div>').addClass('contributor_profile')
         .append(
           $('<img>').attr('src', 'http://www.gravatar.com/avatar/'+u.gravatar_id+'?s=135')
-        ).append($('<div>').addClass('name').html(u.login)
         ).append($('<div>').addClass('github')
                  .append($('<a>').attr('href', 'http://github.com/'+u.login).html(u.login)
                  )
