@@ -66,14 +66,14 @@ $(document).ready(function(){
     c.empty();
 
     for (var i in json) {
-      console.log(i);
+      var u = json[i];
       c.append(
         $('<div>').addClass('contributor_profile')
         .append(
-          $('<img>').attr('src', 'http://www.gravatar.com/avatar/'+i.gravatar_id+'?s=135&amp;d=http://three20.info/gfx/team/silhouette.gif')
-        ).append($('<div>').addClass('name').html(i.login)
+          $('<img>').attr('src', 'http://www.gravatar.com/avatar/'+u.gravatar_id+'?s=135')
+        ).append($('<div>').addClass('name').html(u.login)
         ).append($('<div>').addClass('github')
-                 .append($('<a>').attr('href', 'http://github.com/'+i.login).html(i.login)
+                 .append($('<a>').attr('href', 'http://github.com/'+u.login).html(u.login)
                  )
         )
       );
