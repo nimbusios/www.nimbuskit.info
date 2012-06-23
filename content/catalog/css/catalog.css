@@ -1,0 +1,11 @@
+.thumbnails .gist .gist-file .gist-data .gist-highlight pre .line {
+  width: 700px;
+}
+
+.thumbnails .gist .gist-file .gist-data .gist-highlight {
+  max-height: 153px;
+}
+
+.thumbnails .span10 .gist .gist-file .gist-data .gist-highlight {
+  max-height: 414px;
+}
