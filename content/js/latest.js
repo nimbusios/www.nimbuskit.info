@@ -81,7 +81,7 @@ $(document).ready(function(){
     );
     
     fetchIssues('bug', bugs, 'Bugs:');
-    fetchIssues('feature', bugs, 'Feature Requests:');
+    fetchIssues('feature', requests, 'Feature Requests:');
   });
 
   GitHubAPI.RepoContributors('jverkoey', 'nimbus', function(json, status) {
