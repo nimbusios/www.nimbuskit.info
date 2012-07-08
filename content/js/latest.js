@@ -56,7 +56,7 @@ function normalizeDate(date) {
 }
 
 function fetchIssues(type, element, label) {
-  var labels = '['+feature+']';
+  var labels = type;
   element.attr('href', 'http://github.com/jverkoey/nimbus/issues?labels='+labels);
   GitHubAPI.RepoIssues('jverkoey', 'nimbus', labels, function(json, status) {
     if (json) {
