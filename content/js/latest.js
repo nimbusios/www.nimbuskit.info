@@ -19,6 +19,12 @@ GitHubAPI.RepoEvents = function(username, reponame, callback) {
     callback(json.data, status);
   });
 };
+GitHubAPI.RepoIssues = function(username, reponame, labels, callback) {
+  requestURL = "https://api.github.com/repos/"+username+"/"+reponame+'/issues?labels='+labels+'&callback=?';
+  $.getJSON(requestURL, function(json, status){
+    callback(json.data, status);
+  });
+};
 GitHubAPI.RepoContributors = function(username, reponame, callback) {
   requestURL = "https://api.github.com/repos/"+username+"/"+reponame+'/contributors?callback=?';
   $.getJSON(requestURL, function(json, status){
@@ -49,16 +55,33 @@ function normalizeDate(date) {
   return out;
 }
 
+function fetchIssues(type, element, label) {
+  var labels = '['+feature+']';
+  element.attr('href', 'http://github.com/jverkoey/nimbus/issues?labels='+labels);
+  GitHubAPI.RepoIssues('jverkoey', 'nimbus', labels, function(json, status) {
+    if (json) {
+      var text = json.length;
+      element.html(label + ' ' + text);
+    }
+  });
+}
+
 $(document).ready(function(){
   GitHubAPI.Repo('jverkoey', 'nimbus', function(json, status) {
     var r = $('#repo');
     r.empty();
 
+    var bugs = $('<dd>');
+    var requests = $('<dd>');
     r.append($('<dl>')
       .append($('<dd>').html('Forks: '+json.forks))
       .append($('<dd>').html('Watchers: '+json.watchers))
-      .append($('<dd>').html('Open Issues: '+json.open_issues))
+      .append(bugs)
+      .append(requests)
     );
+    
+    fetchIssues('bug', bugs, 'Bugs:');
+    fetchIssues('feature', bugs, 'Feature Requests:');
   });
 
   GitHubAPI.RepoContributors('jverkoey', 'nimbus', function(json, status) {
